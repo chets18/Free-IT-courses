@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIO 'learn to earn'</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2a0444, #0b2e59);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 2px solid #7f00ff;
+        }
+
+        .logo img {
+            height: 100px;
+            filter: drop-shadow(0 0 5px #7f00ff);
+        }
+
+        .home-icon img {
+            height: 40px;
+            filter: drop-shadow(0 0 5px #7f00ff);
+        }
+
+
+
+        .subheading {
+            text-align: center;
+            margin: 1rem 0;
+            color: #ff5500;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 5%;
+        }
+
+        .course {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid #7f00ff;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.3);
+        }
+
+        .course:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(127, 0, 255, 0.5);
+        }
+
+        .course img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 2px solid #00f3ff;
+        }
+
+        .join-btn {
+            background: #7f00ff;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .join-btn:hover {
+            background: #9d4dff;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 3rem;
+            border-top: 2px solid #7f00ff;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #7f00ff, 0 0 40px #7f00ff;
+            }
+
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #9d4dff, 0 0 40px #9d4dff, 0 0 50px #9d4dff;
+            }
+        }
+
+        /* Adjusting the home logo */
+        .home-icon {
+            width: 40px;
+            /* Adjust width as needed */
+            height: 40px;
+            /* Adjust height as needed */
+            border-radius: 20px;
+            /* Makes it circular */
+            margin-right: 10px;
+            /* Space between home icon and text */
+        }
+
+        /* Adjusting the logo in a circle */
+        .logo-circle {
+            width: 100px;
+            /* Adjust width as needed */
+            height: 100px;
+            /* Adjust height as needed */
+            border-radius: 90%;
+            /* Makes it circular */
+            background-color: rgba(255, 255, 255, 0.2);
+            /* Optional background color */
+            display: flex;
+            /* Centers the logo */
+            justify-content: center;
+            /* Centers the logo */
+            align-items: center;
+            /* Centers the logo */
+            margin: 40px;
+            /* Space around the logo */
+        }
+
+        /* Ensuring the image inside the circle is responsive */
+        .logo-circle img {
+            width: 90%;
+            /* Adjust image size */
+            height: auto;
+            /* Maintain aspect ratio */
+        }
+
+        .aboutus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            padding: 2rem 5%;
+        }
+
+        .aboutus {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 2px solid #7f00ff;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.3);
+        }
+
+        .aboutus:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px rgba(127, 0, 255, 0.5);
+        }
+
+        .h2 {
+
+            color: #723f3f;
+        }
+    </style>
+    <style>
+        .aboutus-grid {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 5%;
+        }
+
+        .aboutus {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid #7f00ff;
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(127, 0, 255, 0.3);
+            backdrop-filter: blur(5px);
+        }
+
+        .aboutus h1 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(48, 47, 50, 0.5);
+        }
+
+        .aboutus hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #7f00ff, transparent);
+            margin: 1.5rem 0;
+        }
+
+        .aboutus p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+            text-align: justify;
+        }
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .aboutus {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .aboutus h1 {
+                font-size: 1.5rem;
+            }
+
+            .aboutus p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .aboutus {
+                padding: 1rem;
+            }
+
+            .aboutus h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"><img src="logo white.png" alt="Logo"></div>
+        <h1>Free Courses</h1>
+        <div class="home-icon"><img src="homelogo.png" alt="Home"></div>
+    </header>
+
+    <p class="subheading">Note: All Courses are Free</p>
+
+    <main class="course-grid">
+        <!-- Course items remain the same as original -->
+        <div class="course">
+            <img src="AI.jpg" alt="AI & ML">
+            <h2>AI & ML</h2>
+            <h5> Learn AI & ML basics, build models, and work on real-world projects.</h5>
+            <h4>10 - 14 months</h4>
+            <a href="AI.html"><button class="join-btn">Join Now</button></a>
+        </div>
+
+        <div class="course">
+            <img src="Cloud computing.png" alt="Cloud Computing">
+            <h2>Cloud Computing</h2>
+            <h5> Master cloud platforms like AWS, Azure & Google Cloud.</h5>
+            <h4>6-8 months</h4>
+            <a href="cloud.html"><button class="join-btn">Join Now</button></a>
+        </div>
+
+        <div class="course">
+            <img src="Data science.jpg" alt="Data Science">
+            <h2>Data Science</h2>
+            <h5> Analyze data, create visualizations, and build ML models.</h5>
+            <h4>6-12 months</h4>
+            <a href="data science.html"><button class="join-btn">Join Now</button></a>
+        </div>
+
+        <div class="course">
+            <img src="Frontend.jpg" alt="Frontend">
+            <h2>Frontend development</h2>
+            <h5> Design responsive, interactive websites with HTML, CSS & JS.</h5>
+            <h4>3-6 months</h4>
+            <a href="frontend.html"><button class="join-btn">Join Now</button></a>
+        </div>
+
+        <div class="course">
+            <img src="Backend.png" alt="Backend">
+            <h2>Backend development</h2>
+            <h5>Build secure, scalable servers & databases.</h5>
+            <h4>6-8 months</h4>
+            <a href="backend.html"><button class="join-btn">Join Now</button></a>
+        </div>
+        <div class="course">
+            <img src="Fullstack.webp" alt="Fullstack">
+            <h2>Full-stack Development</h2>
+            <h5> Develop complete web apps using frontend & backend tech</h5>
+            <h4>9-12 months</h4>
+            <a href="fullstack.html"><button class="join-btn">Join Now</button></a>
+        </div>
+
+        <div class="course">
+            <img src="Digital marketing.avif" alt="Digital marketing">
+            <h2>Digital Marketing</h2>
+            <h5> Grow brands with SEO, social media & online ads.</h5>
+            <h4>4-6 months</h4>
+            <a href="marketing.html"><button class="join-btn">Join Now</button></a>
+        </div>
+        <div class="course">
+            <img src="Graphic Design.jpg" alt="Graphic Design">
+            <h2>Graphic design </h2>
+            <h5>Create stunning visuals using Photoshop, Illustrator & Canva.</h5>
+            <h4>2-4 months</h4>
+            <a href="graphic.html"><button class="join-btn">Join Now</button></a>
+        </div>
+        <div class="course">
+            <img src="UIUX.jpg" alt="UI/UX Design">
+            <h2>UI/UX Design </h2>
+            <h5> Design user-friendly, engaging, and intuitive digital experiences. </h5>
+            <h4>3-5 months</h4>
+            <a href="UIUX.html"><button class="join-btn">Join Now</button></a>
+        </div>
+
+
+    </main>
+    <main class="aboutus-grid">
+        <div class="aboutus">
+            <h1> why follow our resourses?</h1>
+            <hr>
+            <hr>
+            <p>At <strong>BIO</strong>, we believe that everyone deserves a chance to build a successful career in <em>
+                    IT</em>—without financial barriers. That’s why we’ve created a platform that offers <u>completely
+                    free</u>, job-ready IT courses designed to help you learn and earn in today’s competitive job
+                market.
+                Our platform provides step-by-step guidance, covering everything from beginner-level concepts to
+                advanced industry skills. We’ve spoken with successful professionals in the IT field to understand what
+                truly works—and we’re bringing those insights directly to you through high-quality, curated resources.
+                The best part? No sign-in, no paywalls, just pure learning. Whether you're looking to start your journey
+                in programming, AI/ML, cloud, design, or other IT fields, <strong>BIO</strong> is here to guide you with
+                real-world knowledge and practical skills that can make you stand out.
+                Join us and take the first step toward a brighter future in IT—for free, forever. 🚀</p>
+            <hr>
+            <hr>
+        </div>
+
+    </main>
+    <footer>
+        <p>© 2025 Free Courses. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
